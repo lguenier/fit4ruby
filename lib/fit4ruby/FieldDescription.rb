@@ -32,6 +32,8 @@ module Fit4Ruby
     def full_field_name(developer_data_ids)
       return @full_field_name if @full_field_name
 
+      developer_data_ids = developer_data_ids.top_level_record.developer_data_ids unless developer_data_ids.respond_to?(:size)
+
       if @developer_data_index >=
            developer_data_ids.size
          Log.error "Developer data index #{@developer_data_index} is too large"

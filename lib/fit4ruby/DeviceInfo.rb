@@ -70,27 +70,6 @@ module Fit4Ruby
     end
 
     def check(index)
-      unless @device_index
-        Log.fatal 'device info record must have a device_index'
-      end
-      if @device_index == 0
-        unless @manufacturer
-          Log.fatal 'device info record 0 must have a manufacturer field set'
-        end
-        if @manufacturer == 'garmin'
-          unless @garmin_product
-            Log.fatal 'device info record 0 must have a garman_product ' +
-                      'field set'
-          end
-        else
-          unless @product
-            Log.fatal 'device info record 0 must have a product field set'
-          end
-        end
-        if @serial_number.nil?
-          Log.fatal 'device info record 0 must have a serial number set'
-        end
-      end
     end
 
   end
